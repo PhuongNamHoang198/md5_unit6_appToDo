@@ -26,6 +26,9 @@ export class TodoComponent implements OnInit {
   toggleTodo(i:number) {
     this.todos[i].complete = !this.todos[i].complete;
     // this.todos[i].complete dùng để lấy giá trị của complete
+    // ở vị trí i ,  true --> false, hoặc false --> true
+    // !this.todos[i].complete : lấy ngược lại của giá trị true hoặc false
+    // nếu là true --> nó sẽ trả ra false, ngược lại trả về true
   }
 
   // change() {
