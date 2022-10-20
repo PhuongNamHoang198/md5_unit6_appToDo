@@ -11,6 +11,7 @@ let _id = 1;
 })
 export class TodoComponent implements OnInit {
   todos: Todo[] = [];
+  // todos là một mảng các Todo
   content = new FormControl();
 
   constructor() {
@@ -19,18 +20,34 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
   }
 
-  toggleTodo(i: number) {
+  // toggleTodo(i: number) {
+  //   this.todos[i].complete = !this.todos[i].complete;
+  // }
+  toggleTodo(i:number) {
     this.todos[i].complete = !this.todos[i].complete;
+    // this.todos[i].complete dùng để lấy giá trị của complete
   }
 
+  // change() {
+  //   const value = this.content.value;
+  //   if (value) {
+  //     const todo: Todo = {
+  //       id: _id++,
+  //       content: value,
+  //       complete: false
+  //     };
+  //     this.todos.push(todo);
+  //     this.content.reset();
+  //   }
+  // }
   change() {
     const value = this.content.value;
     if (value) {
-      const todo: Todo = {
+      const todo:Todo = {
         id: _id++,
-        content: value,
+        content:value,
         complete: false
-      };
+      }
       this.todos.push(todo);
       this.content.reset();
     }
